@@ -5,7 +5,7 @@ Turn a model's raw reply into readable, structured text.
 import json
 import re
 
-CWE_PATTERN = re.compile(r"CWE^-\d+$")
+CWE_PATTERN = re.compile(r"^CWE-\d+$")
 FENCE_PATTERN = re.compile(r"^```(?:json)?\s*(.*?)\s*```$", re.DOTALL)
 
 def parse(raw:str) -> dict:
@@ -16,7 +16,7 @@ def parse(raw:str) -> dict:
         text = fenced.group(1)
 
     try:
-        data = json.load(text)
+        data = json.loads(text)
     except json.JSONDecodeError as e:
         result["parse_error"] = f"INVALID JSON: {e.msg}"
         return result
@@ -30,9 +30,9 @@ def parse(raw:str) -> dict:
         result["parse_error"] = "'vulnerable' is missing or not 'true/false'"
         return result
 
-    cwe = data.get("CWE")
-    if cwe is not None and not isinstance(cwe, str):
-        result["parse_error"] = f"'cwe' is not in CWE-<number> form: {cwe!r}"
+    cwe = data.get("cwe")
+    if cwe is not None and not (isinstance(cwe, str) and CWE_PATTERN.match(cwe)):
+        result["parse_error"] = f"'cwe' not in CWE-<number> form: {cwe!r}"
         return result
 
     result["vulnerable"] = vulnerable
