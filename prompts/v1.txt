@@ -1,0 +1,10 @@
+Act as a security code reviewer. Decide whether the code below contains a security vulnerability.
+
+Respond with ONLY a JSON object and no other text, following this EXACT format:
+
+{"vulnerable": true or false, "cwe": "CWE-<number>" or null, "reason": "<one sentence>"}
+
+Use null for "cwe" when "vulnerable" is false.
+
+Code:
+{{CODE}}
