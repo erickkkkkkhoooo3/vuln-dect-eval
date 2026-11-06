@@ -1,0 +1,362 @@
+[
+  {
+    "id": "juliet-cwe15-001",
+    "file": "snippets/juliet-cwe15-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-15",
+    "source": "juliet",
+    "origin": "CWE15_External_Control_of_System_or_Configuration_Setting__connect_tcp_01.java bad()",
+    "notes": "line read from outbound TCP socket passed unchecked to Connection.setCatalog()"
+  },
+  {
+    "id": "juliet-cwe15-002",
+    "file": "snippets/juliet-cwe15-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE15_External_Control_of_System_or_Configuration_Setting__connect_tcp_01.java goodG2B()",
+    "notes": "same setCatalog() call, but the value is a hardcoded string"
+  },
+  {
+    "id": "juliet-cwe23-001",
+    "file": "snippets/juliet-cwe23-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-23",
+    "source": "juliet",
+    "origin": "CWE23_Relative_Path_Traversal__connect_tcp_01.java bad()",
+    "notes": "TCP socket input appended to a fixed upload directory and opened as a file with no path validation"
+  },
+  {
+    "id": "juliet-cwe23-002",
+    "file": "snippets/juliet-cwe23-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE23_Relative_Path_Traversal__connect_tcp_01.java goodG2B()",
+    "notes": "same file-read code, but the filename is a hardcoded string"
+  },
+  {
+    "id": "juliet-cwe36-001",
+    "file": "snippets/juliet-cwe36-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-36",
+    "source": "juliet",
+    "origin": "CWE36_Absolute_Path_Traversal__connect_tcp_01.java bad()",
+    "notes": "TCP socket input used directly as a full file path and opened for reading"
+  },
+  {
+    "id": "juliet-cwe36-002",
+    "file": "snippets/juliet-cwe36-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE36_Absolute_Path_Traversal__connect_tcp_01.java goodG2B()",
+    "notes": "same file-read code, but the path is a hardcoded string"
+  },
+  {
+    "id": "juliet-cwe78-001",
+    "file": "snippets/juliet-cwe78-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-78",
+    "source": "juliet",
+    "origin": "CWE78_OS_Command_Injection__connect_tcp_01.java bad()",
+    "notes": "TCP socket input appended to a shell command passed to Runtime.exec()"
+  },
+  {
+    "id": "juliet-cwe78-002",
+    "file": "snippets/juliet-cwe78-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE78_OS_Command_Injection__connect_tcp_01.java goodG2B()",
+    "notes": "same Runtime.exec() call, but the appended argument is a hardcoded string"
+  },
+  {
+    "id": "juliet-cwe89-001",
+    "file": "snippets/juliet-cwe89-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-89",
+    "source": "juliet",
+    "origin": "CWE89_SQL_Injection__connect_tcp_execute_01.java bad()",
+    "notes": "TCP socket input concatenated into a SQL statement run with Statement.execute()"
+  },
+  {
+    "id": "juliet-cwe89-002",
+    "file": "snippets/juliet-cwe89-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE89_SQL_Injection__connect_tcp_execute_01.java goodG2B()",
+    "notes": "same concatenated SQL, but the value is a hardcoded string"
+  },
+  {
+    "id": "juliet-cwe89-003",
+    "file": "snippets/juliet-cwe89-003.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE89_SQL_Injection__connect_tcp_execute_01.java goodB2G()",
+    "notes": "same TCP socket input as 001, but bound through a PreparedStatement parameter"
+  },
+  {
+    "id": "juliet-cwe90-001",
+    "file": "snippets/juliet-cwe90-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-90",
+    "source": "juliet",
+    "origin": "CWE90_LDAP_Injection__connect_tcp_01.java bad()",
+    "notes": "TCP socket input concatenated into an LDAP search filter"
+  },
+  {
+    "id": "juliet-cwe90-002",
+    "file": "snippets/juliet-cwe90-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE90_LDAP_Injection__connect_tcp_01.java goodG2B()",
+    "notes": "same LDAP search, but the filter value is a hardcoded string"
+  },
+  {
+    "id": "juliet-cwe113-001",
+    "file": "snippets/juliet-cwe113-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-113",
+    "source": "juliet",
+    "origin": "CWE113_HTTP_Response_Splitting__connect_tcp_addCookieServlet_01.java bad()",
+    "notes": "TCP socket input placed unencoded into a cookie value added to the HTTP response"
+  },
+  {
+    "id": "juliet-cwe113-002",
+    "file": "snippets/juliet-cwe113-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE113_HTTP_Response_Splitting__connect_tcp_addCookieServlet_01.java goodG2B()",
+    "notes": "same addCookie() call, but the value is a hardcoded string"
+  },
+  {
+    "id": "juliet-cwe113-003",
+    "file": "snippets/juliet-cwe113-003.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE113_HTTP_Response_Splitting__connect_tcp_addCookieServlet_01.java goodB2G()",
+    "notes": "same TCP socket input as 001, but URL-encoded before going into the cookie"
+  },
+  {
+    "id": "juliet-cwe114-001",
+    "file": "snippets/juliet-cwe114-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-114",
+    "source": "juliet",
+    "origin": "CWE114_Process_Control__basic_01.java bad()",
+    "notes": "native library loaded by bare name with System.loadLibrary(), so the search path decides which file loads"
+  },
+  {
+    "id": "juliet-cwe114-002",
+    "file": "snippets/juliet-cwe114-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE114_Process_Control__basic_01.java good1()",
+    "notes": "same library loaded with System.load() using a fixed absolute path"
+  },
+  {
+    "id": "juliet-cwe129-001",
+    "file": "snippets/juliet-cwe129-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-129",
+    "source": "juliet",
+    "origin": "CWE129_Improper_Validation_of_Array_Index__connect_tcp_array_read_check_max_01.java bad()",
+    "notes": "TCP socket integer used as an array index after checking only the upper bound, so negative values read out of bounds"
+  },
+  {
+    "id": "juliet-cwe129-002",
+    "file": "snippets/juliet-cwe129-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE129_Improper_Validation_of_Array_Index__connect_tcp_array_read_check_max_01.java goodG2B()",
+    "notes": "same upper-bound-only check, but the index is the hardcoded value 2"
+  },
+  {
+    "id": "juliet-cwe129-003",
+    "file": "snippets/juliet-cwe129-003.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE129_Improper_Validation_of_Array_Index__connect_tcp_array_read_check_max_01.java goodB2G()",
+    "notes": "same TCP socket input as 001, but checked against both 0 and array.length"
+  },
+  {
+    "id": "juliet-cwe134-001",
+    "file": "snippets/juliet-cwe134-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-134",
+    "source": "juliet",
+    "origin": "CWE134_Uncontrolled_Format_String__connect_tcp_format_01.java bad()",
+    "notes": "TCP socket input used as the format string in System.out.format()"
+  },
+  {
+    "id": "juliet-cwe134-002",
+    "file": "snippets/juliet-cwe134-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE134_Uncontrolled_Format_String__connect_tcp_format_01.java goodG2B()",
+    "notes": "same format() call, but the format string is a hardcoded string"
+  },
+  {
+    "id": "juliet-cwe134-003",
+    "file": "snippets/juliet-cwe134-003.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE134_Uncontrolled_Format_String__connect_tcp_format_01.java goodB2G()",
+    "notes": "same TCP socket input as 001, but passed as an argument to a fixed \"%s%n\" format string"
+  },
+  {
+    "id": "juliet-cwe190-001",
+    "file": "snippets/juliet-cwe190-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-190",
+    "source": "juliet",
+    "origin": "CWE190_Integer_Overflow__byte_console_readLine_add_01.java bad()",
+    "notes": "console byte value incremented with no check, overflowing at Byte.MAX_VALUE"
+  },
+  {
+    "id": "juliet-cwe190-002",
+    "file": "snippets/juliet-cwe190-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE190_Integer_Overflow__byte_console_readLine_add_01.java goodG2B()",
+    "notes": "same unchecked increment, but the value is the hardcoded 2"
+  },
+  {
+    "id": "juliet-cwe190-003",
+    "file": "snippets/juliet-cwe190-003.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE190_Integer_Overflow__byte_console_readLine_add_01.java goodB2G()",
+    "notes": "same console input as 001, but the increment only runs when data < Byte.MAX_VALUE"
+  },
+  {
+    "id": "juliet-cwe191-001",
+    "file": "snippets/juliet-cwe191-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-191",
+    "source": "juliet",
+    "origin": "CWE191_Integer_Underflow__byte_console_readLine_multiply_01.java bad()",
+    "notes": "negative console byte value multiplied by 2 with no lower-bound check, underflowing below Byte.MIN_VALUE"
+  },
+  {
+    "id": "juliet-cwe191-002",
+    "file": "snippets/juliet-cwe191-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE191_Integer_Underflow__byte_console_readLine_multiply_01.java goodG2B()",
+    "notes": "same multiply code, but the value is the hardcoded 2, so the negative branch never runs"
+  },
+  {
+    "id": "juliet-cwe191-003",
+    "file": "snippets/juliet-cwe191-003.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE191_Integer_Underflow__byte_console_readLine_multiply_01.java goodB2G()",
+    "notes": "same console input as 001, but the multiply only runs when data > Byte.MIN_VALUE/2"
+  },
+  {
+    "id": "juliet-cwe193-001",
+    "file": "snippets/juliet-cwe193-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-193",
+    "source": "juliet",
+    "origin": "CWE193_Off_by_One_Error__do_01.java bad()",
+    "notes": "do-while loop uses i <= intArray.length, writing one element past the end of the array"
+  },
+  {
+    "id": "juliet-cwe193-002",
+    "file": "snippets/juliet-cwe193-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE193_Off_by_One_Error__do_01.java good1()",
+    "notes": "same loop with i < intArray.length, staying in bounds"
+  },
+  {
+    "id": "juliet-cwe197-001",
+    "file": "snippets/juliet-cwe197-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-197",
+    "source": "juliet",
+    "origin": "CWE197_Numeric_Truncation_Error__int_connect_tcp_to_byte_01.java bad()",
+    "notes": "TCP socket integer cast to byte, silently truncating values outside the byte range"
+  },
+  {
+    "id": "juliet-cwe197-002",
+    "file": "snippets/juliet-cwe197-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE197_Numeric_Truncation_Error__int_connect_tcp_to_byte_01.java goodG2B()",
+    "notes": "same byte cast, but the value is the hardcoded 2, which fits in a byte"
+  },
+  {
+    "id": "juliet-cwe209-001",
+    "file": "snippets/juliet-cwe209-001.java",
+    "language": "java",
+    "vulnerable": true,
+    "cwe": "CWE-209",
+    "source": "juliet",
+    "origin": "CWE209_Information_Leak_Error__printStackTrace_01.java bad()",
+    "notes": "caught exception's stack trace printed to the console with printStackTrace()"
+  },
+  {
+    "id": "juliet-cwe209-002",
+    "file": "snippets/juliet-cwe209-002.java",
+    "language": "java",
+    "vulnerable": false,
+    "cwe": null,
+    "source": "juliet",
+    "origin": "CWE209_Information_Leak_Error__printStackTrace_01.java good1()",
+    "notes": "same caught exception, but only a generic error message is printed"
+  }
+]
