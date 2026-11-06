@@ -1,0 +1,18 @@
+    public void handleRequest() throws Throwable
+    {
+        int data;
+
+        data = 2;
+
+        int array[] = { 0, 1, 2, 3, 4 };
+
+        if (data < array.length)
+        {
+            IO.writeLine(array[data]);
+        }
+        else
+        {
+            IO.writeLine("Array index out of bounds");
+        }
+
+    }

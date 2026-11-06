@@ -1,0 +1,11 @@
+    public void handleRequest() throws Throwable
+    {
+        byte data;
+
+        data = 2;
+
+        byte result = (byte)(data + 1);
+
+        IO.writeLine("result: " + result);
+
+    }
